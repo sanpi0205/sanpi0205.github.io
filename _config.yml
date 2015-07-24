@@ -2,9 +2,7 @@
 title: 数往知来
 email: sanpi0205@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  在终极的分析中，一切知识都是历史；在抽象的意义下，一切科学都是数学；在理性的基础上，所有的判断都是统计学。 ——《统计与真理——怎样运用偶然性》
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://sanpi0205.github.io" # the base hostname & protocol for your site
 twitter_username: none
