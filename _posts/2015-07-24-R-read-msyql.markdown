@@ -16,7 +16,7 @@ ERROR: configuration failed for package ‘RODBC’
 
 {% endhighlight %}
 
-错误信息显示需要缺少头文件'sql.h'，此时安装unixodbc，使用命令 'brew instal unixodbc'之后，
+错误信息显示需要缺少头文件`sql.h`，此时安装unixodbc，使用命令 `brew instal unixodbc`之后，
 就可以成功安装RODBC了。[参见][参见]
 
 
@@ -51,7 +51,7 @@ dbListTables(con)
 dbListFields(con, 'some_table')
 {% endhighlight %}
 
-具体可以参考RMySQL帮助，[地址][MySQL]
+具体可以参考[RMySQL帮助][MySQL]。
 
 
 
