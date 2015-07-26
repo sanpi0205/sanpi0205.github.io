@@ -24,17 +24,26 @@ mysql -u root -p
 ### 新建用户
 {% highlight ruby %}
 SELECT User FROM mysql.user;  # 查看当前用户
- create user test;            # 新建用户
+create user test;             # 新建用户
 {% endhighlight %}
 
 ### 新建数据库
-
+{% highlight ruby %}
+show databases;
+create database test;
+{% endhighlight %}
 
 ### 权限管理
+将test数据库授权于test用户
+{% highlight ruby %}
+GRANT ALL ON test.* TO test@'%' IDENTIFIED BY 'password' WITH GRANT OPTION;
+FLUSH PRIVILEGES; 
+# 也可以限定登陆地址
+GRANT ALL ON test.* TO test@'192.168.1.3' IDENTIFIED BY 'password'  WITH GRANT OPTION;
+{% endhighlight %}
 
 
 
+[参考文献][参考文献]
 
-[参考文献：openpyxl][参考文献]
-
-[参考文献]: https://openpyxl.readthedocs.org/en/latest/index.html
+[参考文献]: https://www.digitalocean.com/community/tutorials/a-basic-mysql-tutorial
