@@ -6,7 +6,9 @@ categories: Python
 ---
 
 ### Python创建本地数据表
+
 {% highlight ruby %}
+
 # -*- coding: utf-8 -*-
 """
 Created on Sun Jul 26 20:32:16 2015
@@ -48,6 +50,7 @@ cursor.execute(sector_table)
 
 cursor.close()
 cnx.close()
+
 {% endhighlight %}
 
 
