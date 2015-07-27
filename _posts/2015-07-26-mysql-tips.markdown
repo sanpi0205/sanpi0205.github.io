@@ -50,7 +50,7 @@ use test;
 # 显示当前数据库中所有表
 show tables;
 # 新建表
-
+create table test_table ( `id` int, `sector` int)
 {% endhighlight %}
 
 
