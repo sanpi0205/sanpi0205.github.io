@@ -36,6 +36,8 @@ db_name = "database"
 con = dbConnect(RMySQL::MySQL(), host = db_address, user = db_user, 
                 password = db_pass, dbname = db_name)
 
+# 有时由于编码原因，会出现乱码，解决方案是设定编码，[如下命令:][R_mysql_encoding]
+dbSendQuery(con, "SET NAMES utf8")
 
 {% endhighlight %}
 
@@ -57,3 +59,4 @@ dbListFields(con, 'some_table')
 
 [参见]: http://superuser.com/questions/283272/problem-with-rodbc-installation-in-ubuntu
 [MySQL]: https://cran.r-project.org/package=RMySQL
+[R_mysql_encoding]: http://stackoverflow.com/questions/12869778/fetching-utf-8-text-from-mysql-in-r-returns
