@@ -14,7 +14,8 @@ Created on Sun Jul 26 20:32:16 2015
 @author: zhangbo
 """
 
-### python操作数据库
+# python操作数据库
+
 import mysql.connector
 
 # 连接数据库
