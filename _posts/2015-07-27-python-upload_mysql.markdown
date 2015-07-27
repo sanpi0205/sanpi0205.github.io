@@ -49,8 +49,3 @@ cursor.close()
 cnx.close()
 
 {% endhighlight %}
-
-
-[Mysql命令参考][参考文献]
-
-[参考文献]: http://dev.mysql.com/doc/connector-python/en/connector-python-example-ddl.html
