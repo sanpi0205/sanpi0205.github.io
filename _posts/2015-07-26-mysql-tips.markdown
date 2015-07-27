@@ -53,6 +53,15 @@ show tables;
 create table test_table ( `id` int, `sector` int)
 {% endhighlight %}
 
+### 数据库备份还原
+{% highlight ruby %}
+# 数据库备份
+mysqldump -u root -p energy > energy.sql
+
+# 数据库还原
+ mysql -u root -p energy < energy.sql
+{% endhighlight %}
+
 
 [参考文献][参考文献]
 
