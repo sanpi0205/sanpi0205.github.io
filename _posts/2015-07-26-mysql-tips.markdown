@@ -30,7 +30,8 @@ create user test;             # 新建用户
 ### 新建数据库
 {% highlight ruby %}
 show databases;
-create database test;
+create database test; #新建数据库
+drop database test;   #删除数据库
 {% endhighlight %}
 
 ### 权限管理
@@ -38,10 +39,19 @@ create database test;
 {% highlight ruby %}
 GRANT ALL ON test.* TO test@'%' IDENTIFIED BY 'password' WITH GRANT OPTION;
 FLUSH PRIVILEGES; 
-# 也可以限定登陆地址
+# 也可以指定登陆地址
 GRANT ALL ON test.* TO test@'192.168.1.3' IDENTIFIED BY 'password'  WITH GRANT OPTION;
 {% endhighlight %}
 
+### 新建数据表
+{% highlight ruby %}
+# 使用数据库
+use test;
+# 显示当前数据库中所有表
+show tables;
+# 新建表
+
+{% endhighlight %}
 
 
 [参考文献][参考文献]
