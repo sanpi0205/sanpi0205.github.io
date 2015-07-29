@@ -6,5 +6,6 @@ categories: Algorithm
 ---
 
 ### AdaBoost
-* 初始化数据权重 \$$\omega_{i}$$
-* For m = 1 to M:
+初始化数据权重 
+$$ w_{i} $$
+For m = 1 to M:
