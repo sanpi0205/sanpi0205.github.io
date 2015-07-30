@@ -12,7 +12,7 @@ categories: MySQL
 {% highlight ruby %}
 
 configure: error: "ODBC headers sql.h and sqlext.h not found"
-ERROR: configuration failed for package ‘RODBC’
+ERROR: configuration failed for package 'RODBC'
 
 {% endhighlight %}
 
