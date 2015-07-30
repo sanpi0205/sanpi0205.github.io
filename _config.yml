@@ -10,4 +10,4 @@ github_username:  sanpi0205
 
 # Build settings
 markdown: kramdown
-#highlighter: rouge
+highlighter: rouge
