@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Use R to scrape the web"
-date:   2015-07-31 14:28:40
+date:   2015-07-30 14:28:40
 categories: R
 ---
 
