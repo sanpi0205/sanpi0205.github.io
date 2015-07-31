@@ -6,5 +6,4 @@ categories: R
 ---
 
 ## 利用R抓取web并解析
-本文使用R中web解析包`rvest`来抓取和解析web，`rvest`借鉴了`Pyhon`和`Ruby`中web解析包`Beautiful Soup`，
-并支持`%>%`语法，使程序非常简洁，可读性非常强。
+
