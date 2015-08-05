@@ -54,7 +54,7 @@ create table test_table ( `id` int, `sector` int)
 {% endhighlight %}
 
 ### 数据库备份还原
-{% highlight mysql %}
+{% highlight bash %}
 # 数据库备份
 mysqldump -u root -p energy > energy.sql
 

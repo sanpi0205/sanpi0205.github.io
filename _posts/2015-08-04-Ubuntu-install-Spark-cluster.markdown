@@ -35,4 +35,66 @@ scala -version # 查看scala版本
 
 ### 安装Spark 
 
+本文假定已经安装Hadoop，因而在安装Spark时选择已经编译好但不带Hadoop的Spark安装包。
 
+#### 下载Spark
+{% highlight bash %}
+wget http://mirrors.cnnic.cn/apache/spark/spark-1.4.1/spark-1.4.1-bin-without-hadoop.tgz
+tar xvzf spark-1.4.1-bin-without-hadoop.tgz
+cd spark-1.4.1-bin-without-hadoop/
+{% endhighlight %}
+
+#### 创建Spark安装目录
+{% highlight bash %}
+sudo mkdir /usr/local/spark
+sudo chown -R hduser:hadoop /usr/local/spark/
+{% endhighlight %}
+
+#### 复制文件至安装目录
+{% highlight bash %}
+mv * /usr/local/spark/
+{% endhighlight %}
+
+#### 添加Spark路径
+{% highlight bash %}
+vim ~/.bashrc
+export SPARK_HOME=/usr/local/spark
+export PATH=$PATH:$SPARK_HOME/bin
+
+source ~/.bashrc
+{% endhighlight %}
+
+#### 修改Spark配置文件
+{% highlight bash %}
+cd /usr/local/spark/conf
+cp spark-env.sh.template spark-env.sh
+vim spark-env.sh
+
+export HADOOP_CONF_DIR=/usr/local/hadoop/etc/hadoop
+export SPARK_DIST_CLASSPATH=$(hadoop classpath)
+# export SPARK_DIST_CLASSPATH=$(/path/to/hadoop/bin/hadoop classpath)
+{% endhighlight %}
+
+#### 配置Spark节点
+{% highlight bash %}
+vim slaves
+# 加入Worker节点
+Master
+Slave1
+Slave2
+{% endhighlight %}
+
+#### 启动Spark
+{% highlight bash %}
+# 启动Hadoop
+start-all.sh
+
+# 启动Spark
+cd /usr/local/spark/sbin/
+./start-all.sh
+{% endhighlight %}
+
+#### 测试Spark
+{% highlight bash %}
+
+{% endhighlight %}
