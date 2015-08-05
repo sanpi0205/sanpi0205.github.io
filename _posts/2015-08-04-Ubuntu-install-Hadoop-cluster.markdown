@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Ubuntu install Hadoop cluster"
-date:   2015-07-30 14:44:40
+date:   2015-08-04 14:44:40
 categories: Hadoop
 ---
 
