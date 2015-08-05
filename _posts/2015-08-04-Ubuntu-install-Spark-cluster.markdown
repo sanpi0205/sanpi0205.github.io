@@ -7,7 +7,7 @@ categories: Spark
 
 ### 安装Scala
 
-{% highlight ruby %}
+{% highlight bash %}
 # 下载Scala，并解压
 wget http://downloads.typesafe.com/scala/2.11.7/scala-2.11.7.tgz
 tar xvzf scala-2.11.7.tgz
