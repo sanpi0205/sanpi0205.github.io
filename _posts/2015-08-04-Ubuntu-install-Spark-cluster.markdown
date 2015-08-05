@@ -96,5 +96,18 @@ cd /usr/local/spark/sbin/
 
 #### 测试Spark
 {% highlight bash %}
+cd /usr/local/spark
+./bin/spark-shell
+{% endhighlight %}
+
+在进入Spark shell后，测试Spark实例
+{% highlight scala %}
+# 上传文件至HDFS
+hadoop fs -copyFromLocal README.md /
+
+# 在Spark shell中读取
+val file = sc.textFile("hdfs://Master:54310/README.md")
+val sparks = file.filter(line => line.contains("Spark"))
+sparks.count
 
 {% endhighlight %}
