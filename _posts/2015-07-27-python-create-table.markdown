@@ -7,7 +7,7 @@ categories: Python
 
 ### Python创建本地数据表
 
-{% highlight ruby %}
+{% highlight python3 %}
 
 # -*- coding: utf-8 -*-
 """

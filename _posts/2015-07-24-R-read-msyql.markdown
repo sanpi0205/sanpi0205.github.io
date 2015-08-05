@@ -9,7 +9,7 @@ categories: MySQL
 在Windows中用自带的ODBC建立数据库连接，然后在R中安装RODBC包，就可以读取和操作各种数据库。
 当然也可以再MAC中使用ODBC，但相对更加复杂一些，MAC中安装ROBDC包需要编译，可能会出现错误信息：
 
-{% highlight ruby %}
+{% highlight r %}
 
 configure: error: "ODBC headers sql.h and sqlext.h not found"
 ERROR: configuration failed for package 'RODBC'
@@ -23,7 +23,7 @@ ERROR: configuration failed for package 'RODBC'
 ### RMySQL
 如果是用R连接MySQL的话，可以使用RMySQL包，更加灵活方便。
 
-{% highlight ruby %}
+{% highlight r %}
 
 install.packages('RMySQL')
 library('RMySQL')
@@ -44,12 +44,12 @@ dbSendQuery(con, "SET NAMES utf8")
 
 ### RMySQL命令
 列出数据库中所有表：
-{% highlight ruby %}
+{% highlight r %}
 dbListTables(con)
 {% endhighlight %}
 
 列出表中所有字段：
-{% highlight ruby %}
+{% highlight r %}
 dbListFields(con, 'some_table')
 {% endhighlight %}
 

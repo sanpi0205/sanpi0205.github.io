@@ -7,7 +7,7 @@ categories: Python
 
 ### Python上传数据至数据库
 
-{% highlight ruby %}
+{% highlight python3 %}
 
 
 import mysql.connector

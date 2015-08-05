@@ -13,7 +13,7 @@ categories: Hadoop
 ### 配置SSH无密码登陆
 
 从Slave节点中获取登陆公钥，并将其加入到Master中
-{% highlight ruby %}
+{% highlight bash %}
 # 从Slave1中复制公钥并添加至Master
 scp hduser@Slave1:/home/hduser/.ssh/id_rsa.pub /home/hduser/id_rsa.pub.slave1
 cat /home/hduser/id_rsa.pub.slave1 >> /home/hduser/.ssh/authorized_keys
@@ -25,7 +25,7 @@ cat /home/hduser/id_rsa.pub.slave1 >> /home/hduser/.ssh/authorized_keys
 
 将Master的认证文件复制到每个Slave中
 
-{% highlight  ruby %}
+{% highlight  bash %}
 scp ~/.ssh/authorized_keys hduser@Slave1:/home/hduser/.ssh/authorized_keys
 scp ~/.ssh/authorized_keys hduser@Slave2:/home/hduser/.ssh/authorized_keys
 {% endhighlight %}
@@ -35,7 +35,7 @@ scp ~/.ssh/authorized_keys hduser@Slave2:/home/hduser/.ssh/authorized_keys
 需要在集群中每个节点修改Hadoop配置文件，包括`core-site.xml`，`mapred-site.xml`和`hdfs-site.xml`
 这三个文件。
 
-{% highlight  ruby %}
+{% highlight  bash %}
 vim /usr/local/hadoop/etc/hadoop/core-site.xml
 # 将其中 localhost 修改为 Master
 
@@ -48,7 +48,7 @@ vim /usr/local/hadoop/etc/hadoop/hdfs-site.xml
 
 返回至Master节点，配置`masters`和`slaves`文件，进入Hadoop文件目录`cd /usr/local/hadoop/etc/hadoop/`
 
-{% highlight  ruby %}
+{% highlight  bash %}
 vim masters
 # 输入Master，作为Master节点
 
@@ -58,7 +58,7 @@ vim slalves
 
 将配置好的`masters`和`slaves`文件复制所有Slave节点中
 
-{% highlight  ruby %}
+{% highlight  bash %}
 # 复制到Slave1节点中
 scp masters hduser@Slave1:/usr/local/hadoop/etc/hadoop/
 scp slaves  hduser@Slave1:/usr/local/hadoop/etc/hadoop/
@@ -70,7 +70,7 @@ scp slaves  hduser@Slave2:/usr/local/hadoop/etc/hadoop/
 
 之后就可以启动Hadoop集群了，但如果我们之前已经对单机的Hadoop进行过格式化处理，此时需要重新格式化。
 
-{% highlight  ruby %}
+{% highlight  bash %}
 # 删除Hadoop中文件
 rm -r /app/hadoop/tmp/*
 rm -r /usr/local/hadoop_store/hdfs/datanode/*

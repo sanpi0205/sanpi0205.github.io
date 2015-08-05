@@ -12,7 +12,7 @@ categories: R
 
 ### 加载R包
 
-{% highlight ruby %}
+{% highlight r %}
 
 library(rvest)
 library(stringr)
@@ -26,7 +26,7 @@ library(GGally)
 本文以参考文献中实例为基础，改编而来。以抓取暴雪游戏中英雄属性为例，
 抓取英雄的属性包括：名字，角色，攻击范围，HP，Mana，attack damage, attack speed
 
-{% highlight ruby %}
+{% highlight r %}
 heroes = html("http://www.heroesnexus.com/heroes")
 hero_name = heroes %>% html_nodes(".hero-champion h3") %>% html_text()
 hero_type = heroes %>% html_nodes(".hero-champion .hero-type .role") %>% html_text()
@@ -47,7 +47,7 @@ hero_attack_speed = heroes %>% html_nodes(".hero-champion .hero-atk") %>% html_t
 
 
 ### 生成最终数据
-{% highlight ruby %}
+{% highlight r %}
 
 final_data = data.frame(name = hero_name, type = hero_type, hp = hero_hp,
                         mana = hero_Mana, atk = hero_attack_damage, atk_spd = hero_attack_speed)
@@ -56,7 +56,7 @@ final_data = data.frame(name = hero_name, type = hero_type, hp = hero_hp,
 
 ### 可视化数据
 
-{% highlight ruby %}
+{% highlight r %}
 
 final_data %>% 
   select(hp, atk, atk_spd, type) %>% 
