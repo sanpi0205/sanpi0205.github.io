@@ -89,6 +89,4 @@ localhost:50070
 stop-all.sh
 {% endhighlight %}
 
-
-
-
+至此，我们已经部署好Hadoop集群，可以在Master和Slave节点中输入`jps`来查看进行，但该命令可能因计算机架构而不同。
