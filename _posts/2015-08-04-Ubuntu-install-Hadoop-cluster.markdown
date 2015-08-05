@@ -53,12 +53,41 @@ vim masters
 # 输入Master，作为Master节点
 
 vim slalves
-# 输入Master, Slave1, Slave2作为Slave节点，这里将Master节点也作为一个DataNode，也可以不加入Master，
-时Master节点只作为NameNode。
+# 输入Master, Slave1, Slave2作为Slave节点，这里将Master节点也作为一个DataNode，也可以不加入Master，使Master节点只作为NameNode。
 {% endhighlight %}
 
+将配置好的`masters`和`slaves`文件复制所有Slave节点中
 
+{% highlight  ruby %}
+# 复制到Slave1节点中
+scp masters hduser@Slave1:/usr/local/hadoop/etc/hadoop/
+scp slaves  hduser@Slave1:/usr/local/hadoop/etc/hadoop/
 
+# 复制到Slave2节点中
+scp masters hduser@Slave2:/usr/local/hadoop/etc/hadoop/
+scp slaves  hduser@Slave2:/usr/local/hadoop/etc/hadoop/
+{% endhighlight %}
+
+之后就可以启动Hadoop集群了，但如果我们之前已经对单机的Hadoop进行过格式化处理，此时需要重新格式化。
+
+{% highlight  ruby %}
+# 删除Hadoop中文件
+rm -r /app/hadoop/tmp/*
+rm -r /usr/local/hadoop_store/hdfs/datanode/*
+rm -r /usr/local/hadoop_store/hdfs/namenode/*
+
+# 格式化Hadoop
+hadoop namenode -format
+
+# 启动Hadoop集群
+start-all.sh
+
+# Hadoop的WebUI
+localhost:50070
+
+# 关闭Hadoop
+stop-all.sh
+{% endhighlight %}
 
 
 
