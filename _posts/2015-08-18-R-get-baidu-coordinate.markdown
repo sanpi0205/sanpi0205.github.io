@@ -34,7 +34,8 @@ print(address_json)
 
 {% endhighlight %}
 
-参考文献：
+参考文献:
+
 * [百度地图API][API]
 * [R parse Json][json]
 
