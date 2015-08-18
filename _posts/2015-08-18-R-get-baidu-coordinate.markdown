@@ -16,7 +16,7 @@ library(stringr)
 
 # 设定url，其中百度大厦为地址
 url = paste0("http://api.map.baidu.com/","geocoder/v2/?", 
-               "ak=fulYyTzPOK6ag6vksDMWdCf9&", "callback=showLocation&",
+               "ak=your key&", "callback=showLocation&",
                "output=json&", "address=", "百度大厦", "&city=北京市")
 
 # 解析地址
