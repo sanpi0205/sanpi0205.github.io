@@ -1,13 +1,14 @@
 ---
 layout: post
 title:  "Javascript baidu heatmap"
-date:   2015-08-19 08:44:40
+date:   2015-08-18 22:44:40
 categories: Javascript
 ---
 
 ### Javascript+百度地图绘制heatmap
 
 #### html文件
+
 {% highlight html %}
 
 <!DOCTYPE html>
@@ -125,7 +126,6 @@ categories: Javascript
 	    return !!(elem.getContext && elem.getContext('2d'));
 }
 </script>
-
 
 {% endhighlight %}
 
