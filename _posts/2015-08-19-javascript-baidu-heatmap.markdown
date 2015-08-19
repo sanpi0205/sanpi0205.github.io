@@ -36,7 +36,7 @@ categories: Javascript
     </body>
 </html>
 
-{% endhighlight }
+{% endhighlight %}
 
 #### javascipt部分
 
