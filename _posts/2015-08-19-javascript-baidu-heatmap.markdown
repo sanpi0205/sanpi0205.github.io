@@ -131,11 +131,11 @@ categories: Javascript
 
 参考文献:
 
-* [百度地图API][API]
+* [百度地图 heatmap][API]
 * [百度Geocoding API][geocoding]
 * [Heatmap js][heatmap]
 
-[API]: http://developer.baidu.com/map/index.php?title=webapi/guide/webservice-geocoding
+[API]: http://developer.baidu.com/map/jsdemo.htm#c1_15
 [geocoding]: http://developer.baidu.com/map/index.php?title=webapi/guide/webservice-geocoding
 [heatmap]: https://github.com/pa7/heatmap.js
 
