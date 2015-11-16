@@ -53,6 +53,34 @@ dbListTables(con)
 dbListFields(con, 'some_table')
 {% endhighlight %}
 
+R操作数据库：
+{% highlight r %}
+# 建立连接
+db_address = "host"
+db_user = "user"
+db_pass = "password"
+db_name = "database name"
+
+con = dbConnect(RMySQL::MySQL(), host = db_address, user = db_user, 
+                password = db_pass, dbname = db_name)
+# 设置编码格式
+dbSendQuery(con, "SET NAMES utf8")
+# 查询数据
+query = "SELECT * FROM table_name;"
+# 提取数据
+data = dbGetQuery(con, query)
+# dbGetQuery实际上执行了一系列操作，其等同于如下代码
+res = dbSendQuery(con, query)
+data = dbFetch(res)
+# 关闭连接和清除查询
+dbClearResult(res)
+dbDisconnect(con)
+
+# 写入数据：可以直接将data frame数据写入数据库成为数据表
+dbWriteTable(con, "table_name", data_frame)
+
+{% endhighlight %}
+
 具体可以参考[RMySQL帮助][MySQL]。
 
 
