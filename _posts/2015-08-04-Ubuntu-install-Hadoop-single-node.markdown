@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Ubuntu install Hadoop cluster"
+title:  "Ubuntu install Hadoop single node"
 date:   2015-08-04 12:44:40
 categories: Hadoop
 ---
