@@ -72,5 +72,6 @@ conn.close()
 [SQLite教程][ref2]
 
 [ref1]: http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/001388320596292f925f46d56ef4c80a1c9d8e47e2d5711000
-[ref2]http://www.runoob.com/sqlite/sqlite-tutorial.html
+
+[ref2]: http://www.runoob.com/sqlite/sqlite-tutorial.html
 
