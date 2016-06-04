@@ -29,7 +29,7 @@ STORED AS TEXTFILE;
 #创建该表时可以增加更多列，比如版本等信息，视实际情况而定
 {% endhighlight %}
 
-循环执行过程有很多方法，可以用`shell`也可以用其他程序。
+循环执行过程有很多方法，可以用`shell`也可以用其他程序，比如`python`就需要用到 [python 日期循环][pthon_date_loop] 
 
 
 ### 参考文献
@@ -39,7 +39,8 @@ STORED AS TEXTFILE;
 2. [SQLite教程][ref2]
 
 
-[ref1]: http://blog.itpub.net/29254281/viewspace-2097338
 
+[ref1]: http://blog.itpub.net/29254281/viewspace-2097338
 [ref2]: http://www.runoob.com/sqlite/sqlite-tutorial.html
+[pthon_date_loop]: http://blog.csdn.net/wusuopubupt/article/details/29606481
 
