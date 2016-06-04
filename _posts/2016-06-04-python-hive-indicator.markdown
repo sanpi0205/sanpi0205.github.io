@@ -29,18 +29,66 @@ STORED AS TEXTFILE;
 #创建该表时可以增加更多列，比如版本等信息，视实际情况而定
 {% endhighlight %}
 
-循环执行过程有很多方法，可以用`shell`也可以用其他程序，比如`python`就需要用到 [python 日期循环][pthon_date_loop] 
+循环执行过程有很多方法，可以用`shell`也可以用其他程序，比如`python`就需要用到 [python 日期循环][pthon_date_loop]。
+
+{% highlight python3 %}
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Jun  3 23:51:44 2016
+
+@author: zhangbo
+"""
+
+import datetime
+import os
+import time
+
+def main():
+    
+    date_start = datetime.date(2016,1,1)
+    date_end = datetime.date(2016,5,30)
+    
+    n_days = (date_end - date_start).days
+    
+    for i in range(n_days+1):
+        data_date = (date_start + datetime.timedelta(days=i)).strftime("%Y%m%d")
+        print "开始抽取 %s 数据" %data_date
+        sql = """insert into db.first_use
+        select * from
+        (
+        select pid, app, dt
+        from db.event_table
+        where dt=%s and 
+        app="app_name"
+        group by pid, app, dt
+        ) a
+        where a.pid not in (
+        select pid 
+        from db.first_use 
+        where app="app_name"
+        );
+        """ %data_date
+        sql = sql.replace('\n', ' ')
+        command = "hive -e '%s'" %sql
+        os.system(command)
+        
+        print "完成 %s 抽取" %data_date
+        time.sleep(10)
+        
+if __name__ == '__main__':
+    main()
+
+
+{% endhighlight %}
 
 
 ### 参考文献
 
-1. [Hive统计新增][ref1]
-
-2. [SQLite教程][ref2]
+1. [Hive统计新增][Hive统计新增]
 
 
 
-[ref1]: http://blog.itpub.net/29254281/viewspace-2097338
-[ref2]: http://www.runoob.com/sqlite/sqlite-tutorial.html
+
+[Hive统计新增]: http://blog.itpub.net/29254281/viewspace-2097338
 [pthon_date_loop]: http://blog.csdn.net/wusuopubupt/article/details/29606481
 
