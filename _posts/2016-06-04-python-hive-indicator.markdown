@@ -89,22 +89,25 @@ nohup python process.py &
 参见:[PYTHON的程序在LINUX后台运行][PYTHON的程序在LINUX后台运行]
 
 
-### 当期、累计和新增
+### 当期新增、累计新增
 
 完成数据处理后，首次激活即可以非常容易的计算。当然在实际统计中，不仅需要统计特定日期的激活量，还需要统计累计截止到某一日期累计激活量。在有了上述历史表就可以很容计算。
 
 {% highlight sql %}
-
-
+SELECT date, count(*) as amount_per_day, 
+sum(count(*)) OVER (order by date_of_first_use ROWS UNBOUNDED PRECEDING) as cumulative_amount
+FROM db.table
+where app='app'
+group by date
+;
 {% endhighlight %}
 
+参考:[hive累计求和][hive cumulative] 与 [mysql累计求和][mysql累计求和]
 
 
+### 留存统计
 
 
-
-
-### 
 
 
 
@@ -119,3 +122,5 @@ nohup python process.py &
 [Hive统计新增]: http://blog.itpub.net/29254281/viewspace-2097338
 [pthon_date_loop]: http://blog.csdn.net/wusuopubupt/article/details/29606481
 [PYTHON的程序在LINUX后台运行]: http://blog.csdn.net/chenyulancn/article/details/8152966
+[hive cumulative]:http://yugouai.iteye.com/blog/1908121
+[mysql累计求和]:http://blog.csdn.net/dandaoyi/article/details/8490956
