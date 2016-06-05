@@ -81,6 +81,33 @@ if __name__ == '__main__':
 
 {% endhighlight %}
 
+这里唯一需要指出的问题是在使用`python`时，需要将程序提交至服务器后台运行，否则退出`shell`时，程序也会自动中断，方法如下：
+{% highlight bash %}
+nohup python process.py &
+{% endhighlight %}
+
+参见:[PYTHON的程序在LINUX后台运行][PYTHON的程序在LINUX后台运行]
+
+
+### 当期、累计和新增
+
+完成数据处理后，首次激活即可以非常容易的计算。当然在实际统计中，不仅需要统计特定日期的激活量，还需要统计累计截止到某一日期累计激活量。在有了上述历史表就可以很容计算。
+
+{% highlight sql %}
+
+
+{% endhighlight %}
+
+
+
+
+
+
+
+### 
+
+
+
 
 ### 参考文献
 
@@ -91,4 +118,4 @@ if __name__ == '__main__':
 
 [Hive统计新增]: http://blog.itpub.net/29254281/viewspace-2097338
 [pthon_date_loop]: http://blog.csdn.net/wusuopubupt/article/details/29606481
-
+[PYTHON的程序在LINUX后台运行]: http://blog.csdn.net/chenyulancn/article/details/8152966
