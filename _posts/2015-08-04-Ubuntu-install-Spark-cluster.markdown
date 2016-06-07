@@ -70,9 +70,15 @@ cd /usr/local/spark/conf
 cp spark-env.sh.template spark-env.sh
 vim spark-env.sh
 
+
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export SCALA_HOME=/usr/lib/scala
+export SPARK_MASTER_IP=10.58.21.225
+export SPARK_WORKER_MEMORY=4g
 export HADOOP_CONF_DIR=/usr/local/hadoop/etc/hadoop
-export SPARK_DIST_CLASSPATH=$(hadoop classpath)
-# export SPARK_DIST_CLASSPATH=$(/path/to/hadoop/bin/hadoop classpath)
+export SPARK_DIST_CLASSPATH=$(/usr/local/hadoop/bin/hadoop classpath)
+#export HADOOP_CONF_DIR=/usr/local/hadoop/etc/hadoop
+#export SPARK_DIST_CLASSPATH=$(hadoop classpath)
 {% endhighlight %}
 
 #### 配置Spark节点
@@ -82,6 +88,7 @@ vim slaves
 Master
 Slave1
 Slave2
+#单机 localhost
 {% endhighlight %}
 
 #### 启动Spark
@@ -106,7 +113,7 @@ cd /usr/local/spark
 hadoop fs -copyFromLocal README.md /
 
 # 在Spark shell中读取
-val file = sc.textFile("hdfs://Master:54310/README.md")
+val file = sc.textFile("hdfs://Master:54310/README.md") #注意单机和集群的地址可能不同
 val sparks = file.filter(line => line.contains("Spark"))
 sparks.count
 
