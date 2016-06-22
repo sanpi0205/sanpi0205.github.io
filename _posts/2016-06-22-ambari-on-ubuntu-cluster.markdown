@@ -8,9 +8,21 @@ categories: big data
 ### 集群权限
 
 ambari在集群配置hadoop组件时会安装很多应用，如hive, spark等，需要root权限，
-解决的办法有两个：
+因为ubutu中root密码的随机确定的，因而首先需要给root用户设置一个密码。
 
-1. 直接
+{% highlight bash %}
+sudo passwd
+#输入当前用户密码后，　enter
+
+#输入root密码后，切换到root
+
+su root
+{% endhighlight %}
+
+
+
+
+
 
 {% highlight bash %}
 # 下载并解压 Hive
