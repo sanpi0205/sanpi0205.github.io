@@ -41,13 +41,34 @@ StrictModes yes
 service ssh restart
 {% endhighlight %}
 
-当然集群中不同机器还需要设置ssh免密码登陆，参见(ssh免密码登陆)[ssh]
+当然集群中不同机器还需要设置ssh免密码登陆，参见[ssh免密码登陆][ssh]
+
+
+### ambari
+
+现在正式开始配置ambari，首先需要解决的FQDN设置，参见如下格式，需要注意的是
+可能需注释掉`127.0.1.1`
+
+{% highlight bash %}
+vim /etc/hosts
+
+127.0.0.1       localhost
+#127.0.1.1      master
+
+10.73.67.231    master.hadoop.data Master
+10.73.67.232    slave1.hadoop.data Slave1
+10.73.67.233    slave2.hadoop.data Slave2
+
+#保存编辑，就可以看到相应的更新
+hostname
+
+hostname -f
+{% endhighlight %}
 
 
 
 
 
 
-
-## 参考资料
+### 参考资料
 [ssh]:http://sanpi0205.github.io/hadoop/2015/08/04/Ubuntu-install-Hadoop-cluster.html
