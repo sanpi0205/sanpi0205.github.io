@@ -65,10 +65,13 @@ hostname
 hostname -f
 {% endhighlight %}
 
-
+OK，在集群中将所有节点修改完毕后，就可以开始安装了。ambari安装过程参见一下资源[Install Ambari 2.2.2 from Public Repositories][ambari resource]。
+但这里需要注意的是，ambari默认需要FQDN
 
 
 
 
 ### 参考资料
 [ssh]:http://sanpi0205.github.io/hadoop/2015/08/04/Ubuntu-install-Hadoop-cluster.html
+[ambari resource]:https://cwiki.apache.org/confluence/display/AMBARI/Install+Ambari+2.2.2+from+Public+Repositories
+
