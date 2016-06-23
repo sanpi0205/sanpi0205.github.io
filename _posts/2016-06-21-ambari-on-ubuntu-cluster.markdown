@@ -66,7 +66,8 @@ hostname -f
 {% endhighlight %}
 
 OK，在集群中将所有节点修改完毕后，就可以开始安装了。ambari安装过程参见一下资源[Install Ambari 2.2.2 from Public Repositories][ambari resource]。
-但这里需要注意的是，ambari默认需要FQDN
+但这里需要注意的是，ambari默认需要FQDN，并且如果Hive和Oozie使用MySQL作为数据仓库的话，需要配置MySQL，特别是需要运行非localhost的访问。
+
 
 
 
