@@ -87,6 +87,9 @@ shinyApp(ui = shinyUI, server = shinyServer)
 
 `runApp(appDir = file, host="127.0.0.1", port=12345)`
 
+在使用Shiny data table 时很重要的一点是数据的格式化，比如千分位用逗号分隔，已经百分数显示问题等，
+这对用户体验还是非常重要的一个步骤，当然这也是比较耗费时间和精力的部分。因而使用`dplyr, reshape2, scales`
+就非常必要了。
 
 
 
