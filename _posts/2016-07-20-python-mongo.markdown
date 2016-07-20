@@ -41,9 +41,6 @@ for user, data in data_dict.items():
 
 参见: [官网指南][pymongo bulk]
 
-`runApp(appDir = file, host="127.0.0.1", port=12345)`
-
-
 
 [pymongo bulk]: https://api.mongodb.com/python/current/examples/bulk.html
 
