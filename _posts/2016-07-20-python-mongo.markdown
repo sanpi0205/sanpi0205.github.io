@@ -28,8 +28,8 @@ collection.insert_many([ {'_id': user, 'data': data} for user, data in data_dict
 #在涉及批量更新时，mongo提供bulk方法实现大批量的插入、更新和删除。
 
 for user, data in data_dict.items():
-        bulk.find({'_id': user}).upsert().update({'$set': {'data': data}})
-    bulk.execute()
+    bulk.find({'_id': user}).upsert().update({'$set': {'data': data}})
+bulk.execute()
 
 
 
