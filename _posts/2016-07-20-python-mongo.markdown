@@ -32,8 +32,6 @@ for user, data in data_dict.items():
 bulk.execute()
 
 
-
-
 {% endhighlight %}
 
 
