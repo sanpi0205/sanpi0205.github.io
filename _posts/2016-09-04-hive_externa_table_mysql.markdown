@@ -60,6 +60,11 @@ from database.table
 
 
 ## 编码问题
+
+用hive的外部表导数据到MySQL的时候，可能存在编码导致乱码的情况出现，
+hive中使用utf8编码，而MySQL可以使用其他编码方式，因而需要将MySQL
+也设置为utf8编码，参见如下：
+
 {% highlight sql %}
 show variables like 'collation_%';
 
@@ -78,6 +83,17 @@ character-set-server=utf8
 collation-server=utf8_general_ci
 
 {% endhighlight %}
+
+
+## 定时任务
+在数据仓库建立好之后，就需要从Hive仓库中抽取相应数据写入已经建好的
+数据库中。数据抽取可以有多少办法， 定时任务就是其中一种。
+
+使用`crontab -e`来编辑定时任务，
+{% highlight bash %}
+0 12 * * *  flock -xn /home/scloud/eui/report/report.lock -c 'bash -l /home/scloud/eui/data_support/daily_report/dau_yesterday.sh > /home/scloud/eui/data_support/daily_report/log.log 2>&1'
+{% endhighlight %}
+
 
 参见:
  
