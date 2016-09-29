@@ -8,7 +8,7 @@ categories: Algorithm
 关于Boosting算法的介绍中，个人认为最为经典的教程非《*The Elements of Statistical Learning*》 莫属。其将Boosting算法的细节都讲的非常透彻，非研读三五遍不可掌握，本文即为boosting算法的学习笔记。
 
 
-##可加模型 (Additive Model)
+## 可加模型 (Additive Model)
 
 Boosting的本质是一系列**基函数**的可加形式，通常形式如下：
 
