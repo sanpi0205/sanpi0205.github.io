@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "wide and deep model"
-date:   2016-11-20 16:44:40
+date:   2017-11-20 16:44:40
 categories: Algorithm
 ---
 
@@ -119,15 +119,13 @@ print('测试集准确率: %.3f' % results[1])
 参见:
  
 1. [Keras][keras]
-2. [MySQL connector][mysql connector]
-3. [示例][aaa]
-4. [hive to mysql 乱码][乱码]
-5. [stack flow MySQL 编码][默认编码]
+2. [git example][git_example]
+3. [wide and deep][wide_and_deep]
 
 
 [keras]: https://keras-cn.readthedocs.io/en/latest/getting_started/functional_API/#functional
-[git example]: https://github.com/jrzaurin/Wide-and-Deep-Keras/blob/master/wide_and_deep_keras.py 
-[wide and deep]: https://www.tensorflow.org/tutorials/wide_and_deep
+[git_example]: https://github.com/jrzaurin/Wide-and-Deep-Keras/blob/master/wide_and_deep_keras.py 
+[wide_and_deep]: https://www.tensorflow.org/tutorials/wide_and_deep
 
 
 
